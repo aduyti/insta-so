@@ -63,20 +63,24 @@
         <ol>
             <li>
                 <h3>How does JavaScript work?</h3>
-                <p>The JavaScript code we write is read and executed by JavaScript engines like V8 or SpiderMonkey.
-                    JS engine converts the JS code into machine instructions and then execute as a just-in-time
-                    compiler.
-                    JS engine consists of a Heap and a Call Stack.
-                    For all objects, variables and etc in code, the memory allocation happen in Heap.
-                    The Call Stack works in 'First in Last out' manner to read and execute code line by line.
-                    JS is a single threaded, as it has only a single Call Stack. Anonymous functions are used to execute
-                    multiple tasks in parallel is JS and not to block the thread.
+                <p>The JavaScript code we write is read and executed by JavaScript engines like V8 or SpiderMonkey. JS
+                    engine converts the JS code into machine instructions and then execute as a just-in-time compiler.
+                    JS engine consists of a Heap and a Call Stack. For all objects, variables and etc in code, the
+                    memory allocation happen in Heap. Call Stack works in 'First in Last out' manner to read and execute
+                    code line by line and keep track of the current execution. JS is a single threaded, as it has only a
+                    single Call Stack. Anonymous functions are used to execute multiple tasks in parallel is JS and not
+                    to block the thread.
                 </p>
                 <hr />
             </li>
             <li>
                 <h3>What does JavaScript event loop do?</h3>
-                <p></p>
+                <p>Event loop in JavaScript continuously check for events in the Callback Queue. If Call Stack is empty
+                    then event loop take an event from the queue and put it in th Call Stack. While Callback Queue is
+                    empty event loop goes to sleep until new task added to the queue. While asynchronous callbacks
+                    appear in Call Stack, they are sent to Web API for further processing. After timer or XHR request
+                    completes the task is added to the back of the queue. And event loop starts working.
+                </p>
                 <hr />
             </li>
             <li>
